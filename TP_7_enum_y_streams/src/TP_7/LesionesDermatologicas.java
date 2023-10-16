@@ -1,5 +1,6 @@
 package TP_7;
 
+
 public enum LesionesDermatologicas {
 	ROJO("grave", 4),
 	GRIS("medio", 3),
@@ -23,6 +24,7 @@ public enum LesionesDermatologicas {
 	}
  	
 	
+			
 	
 }
 
