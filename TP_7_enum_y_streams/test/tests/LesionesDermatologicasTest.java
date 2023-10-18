@@ -4,11 +4,15 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import TP_7.LesionesDermatologicas;
+
 class LesionesDermatologicasTest {
 
 	@Test
 	void lesionesTest() {
-		return ;
+		LesionesDermatologicas unaLesion = LesionesDermatologicas.ROJO;
+		assertEquals(4, unaLesion.getNivelDeRiesgo());
+		assertEquals("grave", unaLesion.getDescripcion());
 	}
 
 }
