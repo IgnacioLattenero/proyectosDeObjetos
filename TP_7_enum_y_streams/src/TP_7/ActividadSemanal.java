@@ -1,11 +1,13 @@
 package TP_7;
 
 import java.time.*;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.stream.*;
+import java.util.stream.Collectors.*;
 
 public class ActividadSemanal {
 
@@ -116,9 +118,22 @@ public class ActividadSemanal {
 					  .filter(actividad -> actividad.getDeportePracticado() == deporte)
 					  .min(Comparator.comparing(ActividadSemanal::calcularPrecio))
 					  .orElse(new ActividadSemanal());
-					  //.min(Comparator.comparing(actividad:: deporte.calcularPrecio())));
+	// la linea 117, el parentesis tambien se puede escribir como: CHEKEAR en test
+	// actividad -> actividad.calcularPrecio()
 }
 	
+	public Map<Deporte, ActividadSemanal> actividadSemanalMasEconomica(List<ActividadSemanal> actividades) {
+		Map<Deporte, ActividadSemanal> actividadMasEconomicaPorDeporte = 
+			actividades.stream()
+					   .collect(Collectors
+					   .groupingBy(ActividadSemanal::getDeportePracticado, Collectors
+					   .collectingAndThen(Collectors
+					   .minBy(Comparator
+					   .comparing(ActividadSemanal::calcularPrecio)),
+						optional -> optional.orElse(null))));
+						  
+		return actividadMasEconomicaPorDeporte;
+	}
 	
 	
 	
@@ -126,7 +141,11 @@ public class ActividadSemanal {
 	
 	
 	
-	/*List <DiaDeLaSemana> primeraMitadDeSemana = dias.stream()
+	
+	/*
+	 * PARA PARTIR UNA LISTA EN 2 PARA DESPUES LABURARLAS POR SEPARADO, MI INTENTO, NO 
+	 * ESTOY SEGURO DE QUE ESTE BIEN O FUNCIONE PARA LO SIGUIENTE QUE SE QUIERA HACER
+	 * List <DiaDeLaSemana> primeraMitadDeSemana = dias.stream()
 	   .dropWhile(dia -> dias.indexOf(dia) > 2)
 	   .toList();
 List <DiaDeLaSemana> segundaMitadDeSemana = dias.stream()

@@ -9,7 +9,7 @@ import TP_7.ActividadSemanal;
 import TP_7.Deporte;
 import TP_7.DiaDeLaSemana;
 
-class ActividadSemanalTest {
+class ActividadCalcularPrecioTest {
 
 	@Test
 	void Actividadtest() {
