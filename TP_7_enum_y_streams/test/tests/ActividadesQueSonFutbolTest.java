@@ -18,7 +18,15 @@ class ActividadesQueSonFutbolTest {
 	LocalTime horaDeInicioActividad1 = LocalTime.of(16, 0);
 	LocalTime horaDeInicioActividad2 = LocalTime.of(17, 0);
 	LocalTime horaDeInicioActividad3 = LocalTime.of(18, 0);
+	DiaDeLaSemana diaDeLaClase = DiaDeLaSemana.VIERNES; 
 	
+	ActividadSemanal unaActividadSemanal;
+	ActividadSemanal otraActividadSemanal;
+	ActividadSemanal unaTercerActividadSemanal;
+	
+	List<ActividadSemanal> actividades;
+	List<ActividadSemanal> lasQueSonFutbol;
+	Municipio municipio;
 
 	@Test
 	void test() {
@@ -39,19 +47,17 @@ class ActividadesQueSonFutbolTest {
 																		  2,
 																		  Deporte.TENNIS
 			    														  );
-		List<ActividadSemanal> actividades = new ArrayList<ActividadSemanal>();
-		actividades.add(unaActividadSemanal);
-		actividades.add(otraActividadSemanal);
-		actividades.add(unaTercerActividadSemanal);
 		
-		List<ActividadSemanal> lasQueSonFutbol = new ArrayList<ActividadSemanal>();
+		municipio = new Municipio();
+		municipio.agregarActividad(unaActividadSemanal);
+		municipio.agregarActividad(otraActividadSemanal);
+		municipio.agregarActividad(unaTercerActividadSemanal);
+		
+		lasQueSonFutbol = new ArrayList<ActividadSemanal>();
 		lasQueSonFutbol.add(unaActividadSemanal);
 		lasQueSonFutbol.add(otraActividadSemanal);
 		
-		ActividadSemanal actividadSemanal = new ActividadSemanal();
-		
-		assertEquals(lasQueSonFutbol, actividadSemanal.todasLasActividadesQueSonFutbol(actividades));
-		
+		assertEquals(lasQueSonFutbol, municipio.todasLasActividadesQueSonFutbol());
 		
 	}
 

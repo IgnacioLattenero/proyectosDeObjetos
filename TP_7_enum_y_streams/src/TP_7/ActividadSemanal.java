@@ -8,6 +8,8 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.stream.*;
 import java.util.stream.Collectors.*;
+import TP_7.Deporte;
+import TP_7.DiaDeLaSemana;
 
 public class ActividadSemanal {
 
@@ -70,24 +72,6 @@ public class ActividadSemanal {
 		this.deportePracticado = deportePracticado;
 	}
 
-	public List<ActividadSemanal> todasLasActividadesQueSonFutbol(List<ActividadSemanal> actividades)	 {
-		return actividades.stream()
-						  .filter(actividad -> Deporte.FUTBOL.equals(actividad.getDeportePracticado()))
-						  .toList();
-	}
-	
-	public List<ActividadSemanal> todasLasActividadesDeLaComplejidadPedida(int complejidad, List<ActividadSemanal> actividades) {
-		return actividades.stream()
-						  .filter(actividad -> deportePracticado.getComplejidad()
-						  == (actividad.getDeportePracticado().getComplejidad())).toList();
-	}
-	
-	public double cantidadDeHorasTotalesQueOfreceElMunicipio(List<ActividadSemanal> actividades) {
-		return actividades.stream()
-						  .mapToDouble(actividad -> actividad.getDuracion())
-						  .count();
-	}
-	
 	public double calcularPrecio() {
 		// hash table, map  usar map acá, hashMap buscar hago un diccionario, entro con el
 		// dia de la semana y salgo con el valor de horas, hash set y es lo mismo
@@ -113,34 +97,7 @@ public class ActividadSemanal {
 									   
 	}
 	
-	public ActividadSemanal deporteDeMenorCostoSegunElDado(Deporte deporte, List<ActividadSemanal> actividades) { 
-	return actividades.stream()
-					  .filter(actividad -> actividad.getDeportePracticado() == deporte)
-					  .min(Comparator.comparing(ActividadSemanal::calcularPrecio))
-					  .orElse(new ActividadSemanal());
-	// la linea 117, el parentesis tambien se puede escribir como: CHEKEAR en test
-	// actividad -> actividad.calcularPrecio()
 }
-	
-	public Map<Deporte, ActividadSemanal> actividadSemanalMasEconomica(List<ActividadSemanal> actividades) {
-		Map<Deporte, ActividadSemanal> actividadMasEconomicaPorDeporte = 
-			actividades.stream()
-					   .collect(Collectors
-					   .groupingBy(ActividadSemanal::getDeportePracticado, Collectors
-					   .collectingAndThen(Collectors
-					   .minBy(Comparator
-					   .comparing(ActividadSemanal::calcularPrecio)),
-						optional -> optional.orElse(null))));
-						  
-		return actividadMasEconomicaPorDeporte;
-	}
-	
-	
-	
-	
-	
-	
-	
 	
 	/*
 	 * PARA PARTIR UNA LISTA EN 2 PARA DESPUES LABURARLAS POR SEPARADO, MI INTENTO, NO 
@@ -153,7 +110,7 @@ List <DiaDeLaSemana> segundaMitadDeSemana = dias.stream()
 						 .toList();
 precioPrimeraMitad = */
 
-}
+
 
 
 
