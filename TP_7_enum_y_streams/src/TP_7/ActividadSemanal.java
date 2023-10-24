@@ -97,6 +97,14 @@ public class ActividadSemanal {
 									   
 	}
 	
+	@Override
+	public String toString() {
+		return "Deporte: ." + this.getDeportePracticado() + 
+			   "Dia: ." + this.getDia() +
+			   "A Las: ." + this.getHoraDeInicio() + 
+			   "Duración: ." + this.getDuracion() + "hora(s)";
+	}
+	
 }
 	
 	/*
