@@ -18,6 +18,10 @@ public class Municipio {
 		actividadesSemanales.add(actividad);
 	}
 	
+	public List<ActividadSemanal> getActividadesSemanales() {
+		return this.actividadesSemanales;
+	}
+	
 	public List<ActividadSemanal> todasLasActividadesQueSonFutbol()	 {
 		return actividadesSemanales.stream()
 						  .filter(actividad -> Deporte.FUTBOL.equals(actividad.getDeportePracticado()))
@@ -58,6 +62,10 @@ public class Municipio {
 							  
 			return actividadMasEconomicaPorDeporte;
 			
+		}
+		
+		public void imprimirTodasLasActividadesDelMunicipio() {
+			System.out.println(actividadesSemanales.toString());					 
 		}
 	
 

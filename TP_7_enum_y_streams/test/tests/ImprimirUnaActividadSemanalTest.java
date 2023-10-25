@@ -31,7 +31,7 @@ class ImprimirUnaActividadSemanalTest {
 	@Test
 	void testToString() {
 		
-		assertEquals("Deporte: FUTBOL. Dia: VIERNES. A Las: 16:00.  this.getHoraDeInicio()  Duración: 1. hora(s)",
+		assertEquals("Deporte: FUTBOL. Dia: VIERNES. A Las: 16:00. Duración: 1.0 hora(s).",
 					 actividadFutbol.toString());
 	}
 

@@ -3,7 +3,7 @@ package TP_7;
 import java.lang.constant.Constable;
 import java.lang.constant.ConstantDesc;
 
-public enum Deporte implements Constable<Deporte> {
+public enum Deporte implements Constable {
     RUNNING(1),
     FUTBOL(2),
     BASKET(2),
@@ -20,14 +20,5 @@ public enum Deporte implements Constable<Deporte> {
         return this.complejidad;
     }
 
-    @Override
-    public ConstantDesc describeConstable() {
-        return new ConstantDesc() {
-            @Override
-            public String describe() {
-                return name();
-            }
-        };
-    }
 }
 
