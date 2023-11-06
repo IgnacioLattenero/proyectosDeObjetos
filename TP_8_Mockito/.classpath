@@ -7,5 +7,30 @@
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/damian/Desktop/ejecutables de aplicaciones/eclipse_objetos_2/eclipse/jar_files/mockito-core-5.6.0.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/damian/Desktop/ejecutables de aplicaciones/eclipse_objetos_2/eclipse/jar_files/mockito-junit-jupiter-5.6.0.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/damian/Desktop/ejecutables de aplicaciones/eclipse_objetos_2/eclipse/jar_files/junit-jupiter-api-5.10.0.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/damian/Desktop/ejecutables de aplicaciones/eclipse_objetos_2/eclipse/jar_files/junit-platform-commons-1.10.0.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
